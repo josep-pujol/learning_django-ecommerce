@@ -14,11 +14,16 @@ def add_to_cart(request, id):
     # To increase/decrease number of items in cart, throught a button in form
     quantity = int(request.POST.get('quantity'))
     
-    # You get the cart from the session, not from a database etc.
-    #You get a dict with the items on the cart, or an empty dict if none
+    # It gets the cart from the session, not from a database etc.
+    # It gets a dict with the items on the cart, or an empty dict if none
     cart = request.session.get('cart', {})
-    cart[id] = cart.get(id, quantity)
+    print('\n\ncart', cart)
     
+    if id in cart:
+        cart[id] = int(cart[id]) + quantity      
+    else:
+        cart[id] = cart.get(id, quantity) 
+
     request.session['cart'] = cart
     return redirect(reverse('index'))
 
@@ -27,7 +32,7 @@ def adjust_cart(request, id):
     """Adjust the quantity of the specified product to the specified amount"""
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
-    # you can only adjust if there is something in the cart
+    # only adjust if there is something in the cart
     if quantity > 0:
         cart[id] = quantity
     else:
