@@ -20,4 +20,3 @@ def cart_content(request):
     return {'cart_items': cart_items, 
             'total': total, 
             'product_count': product_count}
-        
