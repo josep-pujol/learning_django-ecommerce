@@ -1,6 +1,7 @@
 from django.db import models
 from products.models import Product
 
+
 class Order(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
