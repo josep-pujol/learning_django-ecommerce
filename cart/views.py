@@ -17,7 +17,6 @@ def add_to_cart(request, id):
     # It gets the cart from the session, not from a database etc.
     # It gets a dict with the items on the cart, or an empty dict if none
     cart = request.session.get('cart', {})
-    print('\n\ncart', cart)
     
     if id in cart:
         cart[id] = int(cart[id]) + quantity      
