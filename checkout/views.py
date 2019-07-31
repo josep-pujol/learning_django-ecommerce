@@ -19,7 +19,8 @@ def checkout(request):
         order_form = OrderForm(request.POST)
         # card details
         payment_form = MakePaymentForm(request.POST)
-        
+        print('\n\norder_form\n', order_form.is_valid(), order_form)
+        print('\n\npayment_form\n', payment_form.is_valid(), payment_form)
         if order_form.is_valid() and payment_form.is_valid():
             # commit=False is to save data and keep form open to add 
             # more data before saving
