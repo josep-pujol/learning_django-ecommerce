@@ -2,3 +2,5 @@
 *.pyc
 .c9/
 __pycache__/
+requi.txt
+env.py
