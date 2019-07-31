@@ -26,7 +26,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['25f3c50230ab4df1b1a4283d098e96e8.vfs.cloud9.us-east-1.amazonaws.com',]
+ALLOWED_HOSTS = ['25f3c50230ab4df1b1a4283d098e96e8.vfs.cloud9.us-east-1.amazonaws.com',
+                 'https://learningdjango-ecommerce.herokuapp.com/', ]
 
 
 # Application definition
@@ -157,9 +158,8 @@ USE_TZ = True
 # DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
-
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
