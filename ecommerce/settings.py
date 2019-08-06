@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['25f3c50230ab4df1b1a4283d098e96e8.vfs.cloud9.us-east-1.amazonaws.com',
-                 'https://learningdjango-ecommerce.herokuapp.com', ]
+                 'learningdjango-ecommerce.herokuapp.com', ]
 
 
 # Application definition
